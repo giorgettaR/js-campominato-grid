@@ -25,17 +25,21 @@ header button {
 .cell {
     aspect-ratio: 1/1;
     border: 1px dashed black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cell.diff1 {
+.cell.easy {
     width: calc(100% / 10);
 }
 
-.cell.diff2 {
+.cell.medium {
     width: calc(100% / 9);
 }
 
-.cell.diff3 {
+.cell.hard {
     width: calc(100% / 7);
 }
 

@@ -25,21 +25,45 @@ const playButton = document.getElementById('playButton');
 
 const gridElement = document.querySelector('.container');
 
-const size = 10;
-const nunOfCells = size ** 2;
+const difficultySelectionElement = document.getElementById('difficulty');
+
+
 
 
 playButton.addEventListener('click', function(){
+    
+    let difficulty = difficultySelectionElement.value;
+
+console.log(difficulty)
+
+    if (difficulty == 'easy') {
+        numOfCells = 100;
+        console.log(numOfCells)
+    } else if (difficulty == 'medium'){
+        numOfCells = 81;
+        console.log(numOfCells)
+    } else {
+        numOfCells = 49;
+        console.log(numOfCells)
+    }
+
+
 
     gridElement.innerHTML = '';
 
-    for (let i = 0; i < nunOfCells; i++) {
+    for (let i = 0; i < numOfCells; i++) {
 
-        // creazione elemento
+        // creazione e aggiunta celle
         const cellElement = document.createElement('div');
-        cellElement.classList.add('cell', 'diff1');
+        cellElement.classList.add('cell', difficulty);
         gridElement.appendChild(cellElement);
 
+        // creazione e aggiunta numeri
+        const numElement = document.createElement('div');
+        numElement.innerHTML = i + 1;
+        cellElement.appendChild(numElement);
+
+        // toggle stile celle colpite
         cellElement.addEventListener('click', function(){
             cellElement.classList.toggle('hit');
         })
