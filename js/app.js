@@ -36,7 +36,7 @@ playButton.addEventListener('click', function(){
 
 console.log(difficulty)
 
-    if (difficulty == 'easy') {
+    if (difficulty == 'hard') {
         numOfCells = 100;
         console.log(numOfCells)
     } else if (difficulty == 'medium'){
